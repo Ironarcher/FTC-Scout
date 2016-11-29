@@ -16,7 +16,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final RatingBar ratingBar1 = (RatingBar) findViewById(R.id.hang_rate);
+        final RatingBar ratingBar1 = (RatingBar) findViewById(R.id.cap_capball);
         ratingBar1.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
@@ -25,7 +25,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
-        final RatingBar ratingBar2 = (RatingBar) findViewById(R.id.high_score_rate);
+        final RatingBar ratingBar2 = (RatingBar) findViewById(R.id.cap_high);
         ratingBar2.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
@@ -34,7 +34,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
-        final RatingBar ratingBar3 = (RatingBar) findViewById(R.id.medium_score_rate);
+        final RatingBar ratingBar3 = (RatingBar) findViewById(R.id.cap_low);
         ratingBar3.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
@@ -43,7 +43,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
-        final RatingBar ratingBar4 = (RatingBar) findViewById(R.id.low_score_rate);
+        final RatingBar ratingBar4 = (RatingBar) findViewById(R.id.beacon);
         ratingBar4.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
@@ -52,7 +52,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
-        final RatingBar ratingBar5 = (RatingBar) findViewById(R.id.auto_climber_rate);
+        final RatingBar ratingBar5 = (RatingBar) findViewById(R.id.particle_center);
         ratingBar5.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
@@ -61,7 +61,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
-        final RatingBar ratingBar6 = (RatingBar) findViewById(R.id.auto_park_rate);
+        final RatingBar ratingBar6 = (RatingBar) findViewById(R.id.particle_corner);
         ratingBar6.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
@@ -70,7 +70,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
-        final RatingBar ratingBar7 = (RatingBar) findViewById(R.id.driving_rate);
+        final RatingBar ratingBar7 = (RatingBar) findViewById(R.id.parking_center);
         ratingBar7.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
@@ -79,7 +79,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
-        final RatingBar ratingBar8 = (RatingBar) findViewById(R.id.park_high_zone_rate);
+        final RatingBar ratingBar8 = (RatingBar) findViewById(R.id.parking_corner);
         ratingBar8.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
@@ -88,7 +88,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
-        final RatingBar ratingBar9 = (RatingBar) findViewById(R.id.park_mid_zone_rate);
+        final RatingBar ratingBar9 = (RatingBar) findViewById(R.id.autonomous_particle_center);
         ratingBar9.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
@@ -97,7 +97,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
-        final RatingBar ratingBar10 = (RatingBar) findViewById(R.id.signal);
+        final RatingBar ratingBar10 = (RatingBar) findViewById(R.id.autonomous_beacon);
         ratingBar10.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
@@ -106,8 +106,26 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
-        final RatingBar ratingBar11 = (RatingBar) findViewById(R.id.climbers);
+        final RatingBar ratingBar11 = (RatingBar) findViewById(R.id.autonomous_capball);
         ratingBar11.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+                if(ratingBar.getRating() < 1.0f){
+                    ratingBar.setRating(1.0f);
+                }
+            }
+        });
+        final RatingBar ratingBar12 = (RatingBar) findViewById(R.id.drive);
+        ratingBar12.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+                if(ratingBar.getRating() < 1.0f){
+                    ratingBar.setRating(1.0f);
+                }
+            }
+        });
+        final RatingBar ratingBar13 = (RatingBar) findViewById(R.id.autonomous_particle_corner);
+        ratingBar13.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
                 if(ratingBar.getRating() < 1.0f){
@@ -140,41 +158,46 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void refreshScore(View view){
-        int hang_rate = Math.round(((RatingBar) findViewById(R.id.hang_rate)).getRating());
-        int high_score_rate = Math.round(((RatingBar) findViewById(R.id.high_score_rate)).getRating());
-        int medium_score_rate = Math.round(((RatingBar) findViewById(R.id.medium_score_rate)).getRating());
-        int low_score_rate = Math.round(((RatingBar) findViewById(R.id.low_score_rate)).getRating());
-        int auto_climber_rate = Math.round(((RatingBar) findViewById(R.id.auto_climber_rate)).getRating());
-        int auto_park_rate = Math.round(((RatingBar) findViewById(R.id.auto_park_rate)).getRating());
-        int driving_rate = Math.round(((RatingBar) findViewById(R.id.driving_rate)).getRating());
-        int park_mid_zone_rate = Math.round(((RatingBar) findViewById(R.id.park_mid_zone_rate)).getRating());
-        int park_high_zone_rate = Math.round(((RatingBar) findViewById(R.id.park_high_zone_rate)).getRating());
-        int signal = Math.round(((RatingBar) findViewById(R.id.signal)).getRating());
-        int ramp_climbers = Math.round(((RatingBar) findViewById(R.id.climbers)).getRating());
+        int cap_capball = Math.round(((RatingBar) findViewById(R.id.cap_capball)).getRating());
+        int cap_high = Math.round(((RatingBar) findViewById(R.id.cap_high)).getRating());
+        int cap_low = Math.round(((RatingBar) findViewById(R.id.cap_low)).getRating());
+        int teleop_beacon = Math.round(((RatingBar) findViewById(R.id.beacon)).getRating());
+        int particle_center = Math.round(((RatingBar) findViewById(R.id.particle_center)).getRating());
+        int particle_corner = Math.round(((RatingBar) findViewById(R.id.particle_corner)).getRating());
+        int parking_center = Math.round(((RatingBar) findViewById(R.id.parking_center)).getRating());
+        int parking_corner = Math.round(((RatingBar) findViewById(R.id.parking_corner)).getRating());
+        int autonomous_particle_center = Math.round(((RatingBar) findViewById(R.id.autonomous_particle_center)).getRating());
+        int autonomous_particle_corner = Math.round(((RatingBar) findViewById(R.id.autonomous_particle_corner)).getRating());
+        int autonomous_beacon = Math.round(((RatingBar) findViewById(R.id.autonomous_beacon)).getRating());
+        int autonomous_capball = Math.round(((RatingBar) findViewById(R.id.autonomous_capball)).getRating());
+        int drive = Math.round(((RatingBar) findViewById(R.id.drive)).getRating());
         TextView score = (TextView) findViewById(R.id.score);
-        double final_score = calculate_score(hang_rate, high_score_rate, medium_score_rate, low_score_rate,
-                auto_climber_rate, auto_park_rate, driving_rate, park_mid_zone_rate, park_high_zone_rate,
-                signal, ramp_climbers);
-        double final_score_rounded = Math.round(final_score * 100.0)/100.0;
+        double final_score = calculate_score(cap_capball, cap_high, cap_low, teleop_beacon,
+                particle_center, particle_corner, parking_center, parking_corner, autonomous_particle_center, autonomous_particle_corner,
+                autonomous_beacon, autonomous_capball, drive);
+        //double final_score_rounded = Math.round(final_score * 100.0)/100.0;
+        double final_score_rounded = Math.round(final_score * (100/87.78));
         score.setText(Double.toString(final_score_rounded));
     }
 
-    private double calculate_score(int hang_rate, int high_score_rate, int medium_score_rate,
-                          int low_score_rate, int auto_climber_rate, int auto_park_rate,
-                          int driving_rate, int park_mid_zone_rate, int park_high_zone_rate,
-                                   int signal, int ramp_climbers){
-        double score1 = Math.pow(hang_rate-1,2)*200;
-        double score2 = Math.pow(high_score_rate-1,3)*40;
-        double score3 = Math.pow(medium_score_rate-1,2)*50;
-        double score4 = (low_score_rate-1)*100;
-        double score5 = Math.pow(auto_climber_rate-1,3)*30;
-        double score6 = Math.pow(auto_park_rate-1,3)*5;
-        double score7 = (driving_rate-4.2)*(Math.abs(driving_rate-4.2))*200;
-        double score8 = (park_mid_zone_rate-1)*50;
-        double score9 = (park_high_zone_rate-1)*75;
-        double score10 = (signal-1)*75;
-        double score11 = (ramp_climbers-1)*75;
-        double summation = score1+score2+score3+score4+score5+score6+score7+score8+score9+score10+score11+2048;
-        return (summation*100/12476);
+    private double calculate_score(int cap_capball, int cap_high, int cap_low,
+                          int teleop_beacon, int particle_center, int particle_corner,
+                          int parking_center, int parking_corner, int autonomous_particle_center,
+                                   int autonomous_particle_corner, int autonomous_beacon, int autonomous_capball, int drive){
+        double score1 = Math.pow(cap_capball-1,2)*150;
+        double score2 = Math.pow(cap_high-1,1)*200;
+        double score3 = Math.pow(cap_low-1,1)*50;
+        double score4 = Math.pow(teleop_beacon-1,2)*50;
+        double score5 = Math.pow(particle_center-1,3)*20;
+        double score6 = Math.pow(particle_corner-1,2)*10;
+        double score7 = Math.pow(parking_center-1,1)*50;
+        double score8 = (parking_corner-1)*50;
+        double score9 = (autonomous_particle_center-1)*100;
+        double score13 = (autonomous_particle_corner-1)*25;
+        double score10 = Math.pow(autonomous_beacon-1, 2)*25;
+        double score11 = Math.pow(autonomous_capball-1,1)*25;
+        double score12 = (drive-5)*Math.abs(drive-5)*150;
+        double summation = score1+score2+score3+score4+score5+score6+score7+score8+score9+score10+score11+score12+2400;
+        return (summation/10640)*100;
     }
 }

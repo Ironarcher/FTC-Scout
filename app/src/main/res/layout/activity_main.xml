@@ -42,14 +42,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Hanging"
+                android:text="Capping"
                 android:id="@+id/textView"
                 android:layout_gravity="center_horizontal" />
 
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/hang_rate"
+                android:id="@+id/cap_capball"
                 android:rating="1"
                 android:longClickable="false"
                 android:numStars="0"
@@ -59,14 +59,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="High Zone Scoring"
+                android:text="Cap Ball High Height"
                 android:id="@+id/textView10"
                 android:layout_gravity="center_horizontal" />
 
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/high_score_rate"
+                android:id="@+id/cap_high"
                 android:rating="1"
                 android:stepSize="1.0" />
 
@@ -74,13 +74,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Zone Scoring"
+                android:text="Cap Ball Low Height"
                 android:id="@+id/textView2" />
 
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/medium_score_rate"
+                android:id="@+id/cap_low"
                 android:rating="1"
                 android:stepSize="1.0" />
 
@@ -88,13 +88,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Low Zone Scoring"
+                android:text="Tele-op Beacon Pressing"
                 android:id="@+id/textView3" />
 
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/low_score_rate"
+                android:id="@+id/beacon"
                 android:rating="1"
                 android:stepSize="1.0" />
 
@@ -102,13 +102,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Autonomous Climber Scoring"
+                android:text="Center Vortex Particles"
                 android:id="@+id/textView4" />
 
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/auto_climber_rate"
+                android:id="@+id/particle_center"
                 android:rating="1"
                 android:stepSize="1.0" />
 
@@ -116,13 +116,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Autonomous Parking"
+                android:text="Corner Vortex Particles"
                 android:id="@+id/textView5" />
 
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/auto_park_rate"
+                android:id="@+id/particle_corner"
                 android:rating="1"
                 android:stepSize="1.0" />
 
@@ -130,13 +130,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Driving"
+                android:text="Center Parking"
                 android:id="@+id/textView6" />
 
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/driving_rate"
+                android:id="@+id/parking_center"
                 android:rating="1"
                 android:stepSize="1.0" />
 
@@ -144,13 +144,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Parking in Mid Zone"
+                android:text="Corner Parking"
                 android:id="@+id/textView7" />
 
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/park_mid_zone_rate"
+                android:id="@+id/parking_corner"
                 android:rating="1"
                 android:stepSize="1.0" />
 
@@ -158,14 +158,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Parking in High Zone"
+                android:text="Autonomous Particle Center"
                 android:id="@+id/textView8"
                 android:layout_gravity="center_horizontal" />
 
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/park_high_zone_rate"
+                android:id="@+id/autonomous_particle_center"
                 android:rating="1"
                 android:stepSize="1.0" />
 
@@ -173,13 +173,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Signal"
+                android:text="Autonomous Particle Corner"
+                android:id="@+id/textView22"
+                android:layout_gravity="center_horizontal" />
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/autonomous_particle_corner"
+                android:rating="1"
+                android:stepSize="1.0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Autonomous Beacons"
                 android:id="@+id/textView9" />
 
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/signal"
+                android:id="@+id/autonomous_beacon"
                 android:rating="1"
                 android:stepSize="1.0" />
 
@@ -187,14 +202,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Ramp Climbers"
+                android:text="Autonomous Cap Ball"
                 android:id="@+id/textView11"
                 android:layout_gravity="center_horizontal" />
 
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/climbers"
+                android:id="@+id/autonomous_capball"
+                android:rating="1"
+                android:stepSize="1.0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Drivetrain"
+                android:id="@+id/textView11"
+                android:layout_gravity="center_horizontal" />
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/drive"
                 android:rating="1"
                 android:stepSize="1.0" />
 
