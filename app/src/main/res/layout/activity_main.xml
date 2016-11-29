@@ -217,7 +217,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Drivetrain"
-                android:id="@+id/textView11"
+                android:id="@+id/textView76"
                 android:layout_gravity="center_horizontal" />
 
             <RatingBar
